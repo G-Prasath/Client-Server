@@ -1,0 +1,21 @@
+.section-container {
+  padding: 0% 4%; /* Default padding for all screen sizes */
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding: 0% 6%; /* Padding for screen widths 640px and above */
+  }
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding:0% 8%; /* Padding for screen widths 768px and above */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 0% 5%; /* Padding for screen widths 1024px and above */
+  }
+}

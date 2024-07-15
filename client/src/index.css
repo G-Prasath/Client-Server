@@ -1,0 +1,22 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .sec-padding {
+    @apply py-[5%] px-[5%] max-lg:p-5 ;
+  }
+
+  .client_scroll{
+    @apply rounded-lg w-[300px] h-[175px] bg-light_white max-md:h-[100px]
+  }
+}
