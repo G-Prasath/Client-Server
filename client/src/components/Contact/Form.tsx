@@ -5,6 +5,8 @@ interface FormData {
   username: string;
   email: string;
   phone: string;
+  city: string;
+  message: string;
   service: string;
 }
 
@@ -15,12 +17,14 @@ const Form = () => {
     username: "",
     email: "",
     phone: "",
+    city: "",
+    message: "",
     service: "",
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -34,21 +38,26 @@ const Form = () => {
     const newErrors: Partial<FormData> = {};
 
     if (!formData.username.trim()) {
-      newErrors.username = "Name is required";
+      newErrors.username = "Name required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "Email  required";
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       newErrors.email = "Email is invalid";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = "Number required";
     } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = "Phone number must be 10 digits";
     }
-
+    if (!formData.city.trim()) {
+      newErrors.city = "City Required";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Enter your message ";
+    }
     if (!formData.service.trim()) {
       newErrors.service = "Please select an option";
     }
@@ -59,7 +68,7 @@ const Form = () => {
       try {
         setSubmitting(true);
         const response = await fetch(
-          "https://email-server-aoiw.onrender.com/send-email",
+          "http://localhost:5000/api/query-form",
           {
             method: "POST",
             headers: {
@@ -74,6 +83,8 @@ const Form = () => {
             username: "",
             email: "",
             phone: "",
+            city:"",
+            message:"",
             service: "",
           });
         } else {
@@ -90,9 +101,9 @@ const Form = () => {
   return (
     <>
       <div className="content sec-padding">
-        <h6 className="uppercase text-center font-[700] text-3xl mb-5">
+        <h1 className="uppercase text-center font-[700] text-3xl mb-5">
           Get in to Touch
-        </h6>
+        </h1>
 
         <p className="text-center mb-5">
           Talk to us about your needs and how we can provide the best solutions.
@@ -110,7 +121,7 @@ const Form = () => {
           </div>
           <div className="w-3/6 max-lg:w-full">
             <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 p-5 max-md:p-0">
+              <div className="grid grid-cols-2 max-sm:grid-cols-1 p-5 gap-5 max-md:p-0">
                 <div className="mb-5 max-md:mb-1">
                   <label className="text-white"></label>
                   <input
@@ -161,9 +172,42 @@ const Form = () => {
                     <p className="text-error_clr">{errors.phone}</p>
                   )}
                 </div>
+                <div className="mb-5 max-md:mb-1">
+                  <label className="text-white"></label>
+                  <input
+                    id="cCity"
+                    type="text"
+                    className="w-full rounded-lg p-2 mt-2 max-md:mt-5 outline-none px-10 min-h-[50px]"
+                    placeholder="City"
+                    name="city"
+                    autoComplete="off"
+                    value={formData.city}
+                    onChange={handleChange}
+                  />
+                  {errors.username && (
+                    <p className="text-error_clr">{errors.city}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="text-white"></label>
+
+                  <textarea
+                    id="mMessage"
+                    name="message"
+                    placeholder="Message"
+                    rows={1}
+                    autoComplete="off"
+                    className="w-full h-10 rounded-lg p-3 mt-2 max-md:mt-5 outline-none px-10 min-h-[50px]"
+                    value={formData.message}
+                    onChange={handleChange}
+                  ></textarea>
+                  {errors.username && (
+                    <p className="text-error_clr">{errors.message}</p>
+                  )}
+                </div>
                 {/* select option */}
 
-                <div className="my-5 max-md:mt-5">
+                <div className="my-2 max-md:mt-5">
                   <select
                     id="select"
                     name="service"
@@ -173,7 +217,7 @@ const Form = () => {
                       border: "1px solid #e5e7eb",
                       borderRadius: "0.50rem",
                       width: "100%",
-                      padding: "9px 2.5rem",
+                      padding: "12px 2.5rem",
                     }}
                   >
                     <option value="">Select Service*</option>
@@ -197,20 +241,20 @@ const Form = () => {
                     </option>
                     <option value="Elevated Car Lift">Car Lift</option>
                   </select>
-                </div>
-                {errors.phone && (
+                  {errors.phone && (
                   <p className="text-error_clr">{errors.service}</p>
                 )}
-
-                <div className="text-center block">
-                  <button
-                    type="submit"
-                    className="btn bg-primary text-white rounded-full max-md:rounded-lg w-1/4 p-2"
-                    disabled={submitting}
-                  >
-                    {submitting ? "Sending..." : "Send Now"}
-                  </button>
                 </div>
+
+              </div>
+              <div className="text-center block mt-5">
+                <button
+                  type="submit"
+                  className="btn bg-primary text-white rounded-full max-md:rounded-lg w-1/4 p-2"
+                  disabled={submitting}
+                >
+                  {submitting ? "Sending..." : "Send Now"}
+                </button>
               </div>
             </form>
           </div>
@@ -219,7 +263,7 @@ const Form = () => {
         <div className="bg-light_white p-5 mt-5 flex max-lg:flex-col max-lg:py-10 rounded-b-lg">
           <div className="w-1/5 max-lg:w-full max-lg:mb-5">
             <div className="imgs w-[300px] max-lg:w-full rounded-lg">
-              <Link to="#">
+              <Link to="/">
                 <img
                   src="/location.jpg"
                   alt="laction - img"

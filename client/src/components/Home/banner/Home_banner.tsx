@@ -17,21 +17,21 @@ const Home_banner = () => {
         <SplideSlide className="item1">
           <div className="banner-slide"></div>
           <div className="banner-container">
-            <h1>Shuttle Parking for Streamlined Convenience</h1>
+            <h2 className="text-5xl max-lg:text-3xl max-sm:text-xl">Shuttle Parking for Streamlined Convenience</h2>
           </div>
         </SplideSlide>
 
         <SplideSlide className="item2">
           <div className="banner-slide"></div>
           <div className="banner-container">
-            <h1>Innovative Puzzle Parking Smart Solutions</h1>
+            <h2 className="text-5xl max-lg:text-3xl max-sm:text-xl">Innovative Puzzle Parking Smart Solutions</h2>
           </div>
         </SplideSlide>
 
         <SplideSlide className="item3">
           <div className="banner-slide"></div>
           <div className="banner-container">
-            <h1>ASRS : Effortless Material Handling</h1>
+            <h2 className="text-5xl max-lg:text-3xl max-sm:text-xl">ASRS : Effortless Material Handling</h2>
           </div>
         </SplideSlide>
       </Splide>

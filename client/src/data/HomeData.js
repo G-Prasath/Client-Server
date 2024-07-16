@@ -1,9 +1,9 @@
 export const Navlinks = [
-    {
+  {
     name: "Stacker Parking System",
     link: "stacker-parking-system",
   },
-    {
+  {
     name: "Tower Parking System",
     link: "tower-parking-system",
   },
@@ -16,15 +16,15 @@ export const Navlinks = [
     name: "Four Post 1+1 Hydraulic System",
     link: "four-post-hydraulic-system",
   },
-    {
+  {
     name: "Puzzle Parking System",
     link: "puzzle-parking-system",
   },
-    {
+  {
     name: "ASRS ",
     link: "automated-stoarge-retrival-system",
   },
-    {
+  {
     name: "Horizontal Rotary Parking",
     link: "horizontal-rotary-parking",
   },
@@ -45,39 +45,39 @@ export const Navlinks = [
 
 export const HomeService = [
   {
-    name: "Shuttle Stacker Parking",
-    link: "/shuttlestacker",
-    img: "/home/Shuttle_Stacker_Parking.jpg",
+    name: "Stacker Parking System",
+    link: "/stacker-parking-system",
+    img: "/home/Stacker_Parking.webp",
     broucher: "/broucher/shuttle_stacker_parking.pdf",
     content:
-      "The Shuttle Stacker parking system amplifies parking capacity in commercial and residential areas. Using an automated shuttle mechanism, it vertically stores and retrieves vehicles, optimizing space. Ideal for densely populated settings, it enhances accessibility and reduces parking footprint. With advanced technology and customizable configurations, this system efficiently manages parking, offering convenience and efficiency for users in diverse environments.",
+      "The Stacker parking system amplifies parking capacity in commercial and residential areas. Using an automated stacking mechanism, it vertically stores and retrieves vehicles, optimizing space. Ideal for densely populated settings, it enhances accessibility and reduces parking footprint. With advanced technology and customizable configurations, this system efficiently manages parking, offering convenience and efficiency for users in diverse environments.",
   },
   {
-    name: "Tower Parking",
-    link: "/towerparking",
+    name: "Tower Parking System",
+    link: "/tower-parking-system",
     img: "/home/Tower_Parking.jpg",
     broucher: "/broucher/tower_carparking_system.pdf",
     content:
       "Tower parking, also termed automated parking, maximizes space efficiency and convenience. Vehicles are automatically parked and retrieved by robotic platforms, eliminating traditional ramps and driving lanes. These systems feature vertical towers with multiple parking levels, ideal for urban areas with limited space. Tower parking provides efficient and secure parking solutions, making it a modern and practical choice for urban environments.",
   },
   {
-    name: "2 Post Hydraulic System",
-    link: "/twopost",
+    name: "Two Post Hydraulic System",
+    link: "/two-post-hydraulic-system",
     img: "/home/2_Post_Hydraulic_System.jpg",
     broucher: "/broucher/1+1_carparking_system.pdf",
     content:
       "The 1+1 2 Post Stacker system is designed specifically for residential applications, particularly suited for individuals and apartment complexes. It enables owners with two vehicles to optimize parking space by accommodating two cars within the footprint typically required for one car. This system employs automated stacking technology, efficiently utilizing vertical space while ensuring convenient access to both vehicles.",
   },
   {
-    name: "4 Post Hydraulic System",
-    link: "/fourpost",
+    name: "Four Post Hydraulic System",
+    link: "/four-post-hydraulic-system",
     img: "/home/4_Post_Hydraulic_System.jpg",
     content:
       "Our 1+1 4 Post Hydraulic System is tailored for private use, ideal for heavy vehicles like SUVs and MPVs. It allows stacking two vehicles in one space, maximizing efficiency. Using hydraulic technology and a sturdy four-post structure, it ensures safe vertical parking. This design optimizes space without compromising accessibility or security, providing homeowners and high-rises a practical solution for parking heavy vehicles.",
   },
   {
-    name: "Puzzle Parking",
-    link: "/puzzleparking",
+    name: "Puzzle Parking System",
+    link: "/puzzle-parking-system",
     img: "/home/Puzzle_Parking.jpg",
     broucher: "/broucher/puzzle_carparking.pdf",
     content:
@@ -85,28 +85,35 @@ export const HomeService = [
   },
   {
     name: "ASRS ",
-    link: "/asrs",
+    link: "/automated-stoarge-retrival-system",
     img: "/home/Automated_Storage_And_Retrieval_System.jpg",
     content:
       "Automated Storage and Retrieval System (ASRS) automates warehouse inventory handling , including the storage and retrieval of various items such as containers, buses, and train compartments etc. It utilizes machinery like movable robotic pallets to efficiently store and retrieve items in dense storage setups. Managed by a central system, ASRS enhances inventory management, reducing manual efforts and increasing precision. It swiftly retrieves items when required, improving warehouse productivity and space utilization. ASRS is pivotal in modern logistics, streamlining operations and meeting customer demands effectively.",
   },
   {
-    name: "Multilevel Stacked Rotary Parking",
-    link: "/stackparking",
+    name: "Horizontal Rotary Parking",
+    link: "/horizontal-rotary-parking",
+    img: "/home/Multilevel_Stacked_Rotary_Parking.jpg",
+    content:
+      "Multilevel Stacked Rotary Parking provides flexible solutions for vertical and horizontal parking needs. This innovative system efficiently utilizes space by stacking vehicles vertically and also horizontally incorporating a rotary mechanism as per parking requirements. With multiple levels, it optimizes land usage and offers convenient access to parking spaces. Ideal for urban environments with limited space, it presents a dynamic and efficient parking solution for various settings.",
+  },
+  {
+    name: "Vertical Rotary Parking",
+    link: "/vertical-rotary-parking",
     img: "/home/Multilevel_Stacked_Rotary_Parking.jpg",
     content:
       "Multilevel Stacked Rotary Parking provides flexible solutions for vertical and horizontal parking needs. This innovative system efficiently utilizes space by stacking vehicles vertically and also horizontally incorporating a rotary mechanism as per parking requirements. With multiple levels, it optimizes land usage and offers convenient access to parking spaces. Ideal for urban environments with limited space, it presents a dynamic and efficient parking solution for various settings.",
   },
   {
     name: "Bike Parking",
-    link: "/bikeparking",
+    link: "/bike-parking",
     img: "/home/Bike_Parking.jpg",
     content:
       "Bike parking systems efficiently store motorcycles in various public spaces like parks, universities, shopping centers, transit stations, and office complexes etc. These systems use innovative designs to conserve space and ensure user convenience. By offering secure storage, they encourage motorcycling as a sustainable transport option, addressing urban space limitations. This promotes eco-friendly commuting and reduces congestion.",
   },
   {
     name: "Car Elevator",
-    link: "/carelevator",
+    link: "/car-elevator",
     img: "/home/Car_Elevator.jpg",
     content:
       "Explore our innovative Car Elevator, a breakthrough in vertical vehicle transport. Ideal for parking garages, dealerships, and high-rise buildings, it effortlessly moves vehicles between floors. With a robust platform and reliable vertical system, it optimizes space while ensuring convenience. Say goodbye to parking woes and hello to seamless automotive storage. Elevate your experience with our state-of-the-art Car Elevator solution today!",
@@ -166,7 +173,7 @@ export const FooterData = [
     title: "Useful Links",
     links: [
       { label: "Privacy Policy", url: "/#" },
-      { label: "Blog", url: "/blogs" },
+      { label: "Blog", url: "/blog" },
       { label: "Career", url: "/careers" },
       { label: "Certificates", url: "/#" },
       { label: "FAQ", url: "/#" },

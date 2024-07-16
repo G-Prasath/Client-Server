@@ -59,7 +59,7 @@ const Services = () => {
                       className="transistion hover:scale-[1.1] duration-500 animate-[pulse_.8s_ease-in-out] rounded-md w-full h-full"
                     />
                   </div>
-                  <div className="service-right_img mt-5 text-white">
+                  <div className="service-right_img mt-5 text-white text-justify">
                     {item.content}
                   </div>
                   <div className="service-right_btn mt-5 flex items-center justify-end">

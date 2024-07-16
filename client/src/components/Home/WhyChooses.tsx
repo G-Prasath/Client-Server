@@ -3,13 +3,13 @@ import { Whychoose } from "../../data/HomeData";
 
 const WhyChooses = () => {
   return (
-    <div  className="sec-padding grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div  className="sec-padding grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-justify">
       {/* Map over JSON data */}
       {Whychoose.map((item, index) => (
         <div
           key={index}
           className={`w-full p-10 max-md:p-3 ${
-            index === 0 ? "bg-white" : "bg-light_white"
+            index === 0 ? "bg-white" : "bg-light_white "
           }`}
         >
           <h2 data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="200" className={`${

@@ -6,7 +6,7 @@ const Aboutsec = () => {
     <div className="w-full sec-padding flex items-center justify-evenly gap-x-20 max-lg:flex-col">
       <div className="w-2/4 max-md:w-full text-center max-lg:w-full">
         <h1 className="uppercase text-4xl font-bold mb-5 max-lg:text-3xl">
-          About Us{" "}
+          About Us
         </h1>
         <p className="text-text_color my-5 text-justify max-md:px-2">
           E STAR Engineers Private Limited, born from the evolution of MECH CI

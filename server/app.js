@@ -87,69 +87,68 @@ app.post("/api/query-form", (req, res) => {
 
 
   // Multer setup for file upload
-  const upload = multer();
+  // const upload = multer();
 
 // POST Career Enquiry route to handle form submission and send email
-app.post("/api/career-form", upload.single('resume'), (req, res) => {
-  const { username, email, phone, prefession, message } = req.body;
-  const resumeFile = req.file;
+app.post("/api/career-form", (req, res) => {
+  console.log(req.body);
 
-  const transporter = nodemailer.createTransport({
-    service: "Gmail", // Update with your email service provider
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+  // const transporter = nodemailer.createTransport({
+  //   service: "Gmail", // Update with your email service provider
+  //   auth: {
+  //     user: process.env.EMAIL_USER,
+  //     pass: process.env.EMAIL_PASS,
+  //   },
+  // });
 
-  const htmlContent = `
-    <h2>Career Enquiry</h2>
-    <table border="1" cellpadding="5" cellspacing="0">
-      <tr>
-        <td><strong>Name:</strong></td>
-        <td>${username}</td>
-      </tr>
-      <tr>
-        <td><strong>Email:</strong></td>
-        <td>${email}</td>
-      </tr>
-      <tr>
-        <td><strong>Phone:</strong></td>
-        <td>${phone}</td>
-      </tr>
-      <tr>
-        <td><strong>Prefession:</strong></td>
-        <td>${prefession}</td>
-      </tr>
-      <tr>
-        <td><strong>Enquiry:</strong></td>
-        <td>${message}</td>
-      </tr>
-    </table>
-  `;
+  // const htmlContent = `
+  //   <h2>Career Enquiry</h2>
+  //   <table border="1" cellpadding="5" cellspacing="0">
+  //     <tr>
+  //       <td><strong>Name:</strong></td>
+  //       <td>${username}</td>
+  //     </tr>
+  //     <tr>
+  //       <td><strong>Email:</strong></td>
+  //       <td>${email}</td>
+  //     </tr>
+  //     <tr>
+  //       <td><strong>Phone:</strong></td>
+  //       <td>${phone}</td>
+  //     </tr>
+  //     <tr>
+  //       <td><strong>Prefession:</strong></td>
+  //       <td>${prefession}</td>
+  //     </tr>
+  //     <tr>
+  //       <td><strong>Enquiry:</strong></td>
+  //       <td>${message}</td>
+  //     </tr>
+  //   </table>
+  // `;
 
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER, // Change to your desired recipient email
-    subject: "Career Enquiry Quote",
-    html: htmlContent,
-    attachments: [
-      {
-        filename: resumeFile.originalname,
-        content: resumeFile.buffer
-      }
-    ]
-  };
+  // const mailOptions = {
+  //   from: process.env.EMAIL_USER,
+  //   to: process.env.EMAIL_USER, 
+  //   subject: "Career Enquiry Quote",
+  //   html: htmlContent,
+  //   attachments: [
+  //     {
+  //       filename: resumeFile.originalname,
+  //       content: resumeFile.buffer
+  //     }
+  //   ]
+  // };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      res.status(500).send("Error sending email");
-    } else {
-      console.log("Email sent: " + info.response);
-      res.status(200).send("Email sent successfully");
-    }
-  });
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (error) {
+  //     console.error(error);
+  //     res.status(500).send("Error sending email");
+  //   } else {
+  //     console.log("Email sent: " + info.response);
+  //     res.status(200).send("Email sent successfully");
+  //   }
+  // });
 });
 
 

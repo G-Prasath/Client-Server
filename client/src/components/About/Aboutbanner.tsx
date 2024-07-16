@@ -9,9 +9,9 @@ const Aboutbanner = () => {
         <div className="sec-padding gap-20">
           <div className="w-full flex items-center gap-x-[45px] justify-between max-lg:flex-col">
             <div className="w-2/4 max-md:w-full text-center max-lg:w-full">
-              <h1 className="uppercase text-4xl font-bold mb-5 max-lg:text-3xl">
+              <h2 className="uppercase text-4xl font-bold mb-5 max-lg:text-3xl">
                 AMRITSAR SMARTCITY PROJECT
-              </h1>
+              </h2>
               <p className="text-text_color my-5 text-justify max-md:px-2">
                 Embarking on a transformative journey with the Amritsar
                 Government, we introduce a pioneering project for the city's
@@ -55,9 +55,9 @@ const Aboutbanner = () => {
             </div>
 
             <div className="w-2/4 max-md:w-full text-center max-lg:w-full">
-              <h1 className="uppercase text-4xl font-bold mb-5 max-lg:text-3xl">
+              <h2 className="uppercase text-4xl font-bold mb-5 max-lg:text-3xl">
                 The chennai silks PROJECT
-              </h1>
+              </h2>
               <p className="text-text_color my-5 text-justify max-md:px-2">
                 Embarking on a groundbreaking journey with The Chennai Silks, we
                 are thrilled to present a visionary project set to transform

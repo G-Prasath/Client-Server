@@ -74,21 +74,21 @@ const Funfact = () => {
         <div className="w-3/5 max-lg:w-full grid grid-cols-2 gap-3">
           <div className="bg-tst h-[244px] max-md:h-[200px] overflow-hidden">
             <LazyLoadImage
-              src="/achievement-1.jpeg"
+              src="/achievement-1.webp"
               alt="funfact_img"
               className="w-full h-full hover:scale-[1.7] transition ease-in-out duration-500 object-contain max-md:object-cover scale-[1.5]"
             />
           </div>
           <div className="bg-tst row-span-2 max-lg:order-2 max-lg:col-span-2 overflow-hidden">
             <LazyLoadImage
-              src="/achievement-3.jpeg"
+              src="/achievement-3.webp"
               alt="funfact_img"
               className="w-full h-full hover:scale-[1.1] transition ease-in-out duration-500 object-cover"
             />
           </div>
           <div className="bg-tst h-[244px] max-md:h-[200px] overflow-hidden">
             <LazyLoadImage
-              src="/achievement-2.jpeg"
+              src="/achievement-2.webp"
               alt="funfact_img"
               className="w-full h-full hover:scale-[1.1] transition ease-in-out duration-500 object-cover"
             />

@@ -28,7 +28,7 @@ const Navbar = () => {
         <nav className="nav nav_container">
           <div className="nav__data">
             <Link to="/" className="nav__logo">
-              <img src="/header_logo.png" alt="Home_Logo" />
+              <img src="/header_logo.webp" alt="Home_Logo" />
             </Link>
 
             <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
@@ -132,7 +132,7 @@ const Navbar = () => {
 
                   <li onClick={() => setIsActive("Blog")}>
                     <Link
-                      to="/blogs"
+                      to="/blog"
                       className="dropdown__link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -162,7 +162,7 @@ const Navbar = () => {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Carrers
+                  Careers
                 </Link>
               </li>
             </ul>

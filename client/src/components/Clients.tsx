@@ -40,7 +40,7 @@ const Clients = () => {
             <img src="clients/chennai_silks.png" alt="Image 2" className="aspect-square client_scroll" />
           </SplideSlide>
           <SplideSlide className="relative">
-            <img src="clients/casa_grand.png" alt="Image 3" className="aspect-square client_scroll" />
+            <img src="clients/casa_grand.webp" alt="Image 3" className="aspect-square client_scroll" />
           </SplideSlide>
 
 

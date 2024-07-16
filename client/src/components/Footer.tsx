@@ -99,19 +99,19 @@ const Footer = () => {
             &#169; Estar Engineers Pvt Ltd, All Rights Reservered 2024.
           </h6>
           <div className="flex max-md:pt-3 max-md:space-x-5 max-md:mx-auto">
-            <Link to="#">
+            <Link to="#" target="_blank">
               <FaLinkedin className="text-2xl px-1 text-icon_color" />
             </Link>
-            <Link to="#">
+            <Link to="https://www.facebook.com/EStarEngineersPrivateLimited/" target="_blank">
               <FaFacebookSquare className="text-2xl px-1 text-icon_color" />
             </Link>
-            <Link to="#">
+            <Link to="https://x.com/EstarEngineers" target="_blank">
               <FaSquareXTwitter className="text-2xl px-1 text-icon_color" />
             </Link>
-            <Link to="#">
+            <Link to="https://www.instagram.com/estar_engineersprivatelimited" target="_blank">
               <FaInstagramSquare className="text-2xl px-1 text-icon_color" />
             </Link>
-            <Link to="#">
+            <Link to="#" target="_blank">
               <FaYoutubeSquare className="text-2xl px-1 text-icon_color" />
             </Link>
           </div>

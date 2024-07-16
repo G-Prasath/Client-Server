@@ -24,17 +24,17 @@ const About = () => {
         data-aos-duration="700"
         className="w-1/2 aspect-video max-lg:w-full bg-primary py-6 px-10 about-right max-lg:px-5 ml-[-5%] max-lg:ml-[0] max-lg:my-3 rounded-lg z-10"
       >
-        <h3 className="font-bold text-[25px] text-white text-center">
+        <h1 className="font-bold text-[25px] text-white text-center">
           ABOUT US
-        </h3>
-        <p className="text-white my-5 max-lg:my-2">
+        </h1>
+        <p className="text-white my-5 max-lg:my-2 text-justify">
           Our parent organization was laid out in 1995, laying the basis for our
           obligation to greatness. North of twenty years, we have developed to
           address client issues, encouraging getting through organizations
           worldwide.
         </p>
 
-        <p className="text-white my-5 max-lg:my-2">
+        <p className="text-white my-5 max-lg:my-2 text-justify">
           In 2012, we established our very own exclusive car parking division,
           which emerged to redefine convenience and safety in vehicle parking
           with patented tech-driven solutions. Through our patented technology,
@@ -42,7 +42,7 @@ const About = () => {
           benchmarks in the industry.
         </p>
 
-        <p className="text-white my-5 max-lg:my-2">
+        <p className="text-white my-5 max-lg:my-2 text-justify">
           As leaders in the manufacturing of Multi-Level Car Parking (MLCP)
           systems, we hold Indian and International patents in order to leverage
           cutting-edge technology and precision engineering. Our comprehensive

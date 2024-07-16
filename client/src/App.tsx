@@ -19,7 +19,6 @@ import Fourpost from "./pages/Fourpost";
 import Puzzleparking from "./pages/Puzzleparking";
 import Shuttleparking from "./pages/Shuttleparking";
 import Towerparking from "./pages/Towerparking";
-import Multilavelstackparking from "./pages/HorizontalRotaryParking";
 import Bikeparking from "./pages/Bikeparking";
 import ASRS from "./pages/ASRS";
 import Carelevator from "./pages/Carelevator";
@@ -27,6 +26,7 @@ import BackToTopButton from "./components/BackToTopButton";
 import VerticalRotary from "./pages/VerticalRotary";
 import Carrers from "./pages/Carrers";
 import HorizontalRotaryParking from "./pages/HorizontalRotaryParking";
+import BlogPg from "./pages/BlogPg";
 
 
 
@@ -52,7 +52,7 @@ function App() {
             <Route path="/bike-parking" element={<Bikeparking />} />
             <Route path="/automated-stoarge-retrival-system" element={<ASRS />} />
             <Route path="/car-elevator" element={<Carelevator />} />
-
+            <Route path="/blog" element={<BlogPg />} />
 
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/videos" element={<Videogallery />} />

@@ -9,7 +9,7 @@ const Blogs = () => {
       <div className="w-full flex max-md:flex-col max-lg:flex-col gap-3">
         <div className="w-1/2 max-lg:w-full rounded-md relative aspect-square overflow-hidden">
           <LazyLoadImage
-            src="blog/1.jpg"
+            src="blog/1.webp"
             alt="Blog"
             className="w-full h-full rounded-md hover:scale-[1.1] transition ease-in-out duration-500"
           />
@@ -28,7 +28,7 @@ const Blogs = () => {
         <div className="w-1/2 max-lg:w-full grid grid-cols-2 gap-3">
           <div className="w-full aspect-square rounded-md relative overflow-hidden">
             <LazyLoadImage
-              src="blog/3.png"
+              src="blog/3.webp"
               alt="Blog"
               className="w-full h-full rounded-md hover:scale-[1.1] transition ease-in-out duration-500"
             />
@@ -82,7 +82,7 @@ const Blogs = () => {
           </div>
           <div className="w-full aspect-square rounded-md relative overflow-hidden ">
             <LazyLoadImage
-              src="blog/5.png"
+              src="blog/5.webp"
               alt="Blog"
               className="w-full h-full rounded-md hover:scale-[1.1] transition ease-in-out duration-500"
             />

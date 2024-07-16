@@ -1,12 +1,12 @@
 export const HomePageData = {
-    title: "Explore Multi Level Car Parking in India -E Star",
+    title: "Explore Multi Level Car Parking Manufacturers in India -E Star",
     description: "We are leading manufacturers of multi-level car parking system in India for optimizing commercial and residential parking efficiency.",
     keywords: "multi level car parking, car parking system manufactures in india, multi level car parking system manufactures  india",
     canonical: "https://estar.in/"
   };
 
   export const AboutPageData = {
-    title: "Multi level car parking manufactures in india - E Star",
+    title: "Multi level car parking Manufacturers in india - E Star",
     description: "We established an exclusive car parking division, redefining convenience and safety with patented tech. We prioritize accessibility, security, and sustainability.",
     keywords: "puzzle parking system, multi level car parking system in india, shuttle parking system",
     canonical: "https://estar.in/about-us"

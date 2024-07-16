@@ -9,7 +9,7 @@ const Compltedproject = () => {
         <h1 className="text-center uppercase text-3xl max-md:text-2xl font-[700]">
           Completed Projects
         </h1>
-        <p className="text-center w-[1000px] mt-4 max-lg:w-full max-lg:text-justify">
+        <p className="w-[1000px] mt-4 max-lg:w-full text-justify">
           Our portfolio of completed projects reflects our passion for
           innovation and precision. Each project is a testament to our team's
           skill and dedication, demonstrating our ability to deliver outstanding
