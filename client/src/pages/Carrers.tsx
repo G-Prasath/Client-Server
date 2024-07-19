@@ -1,35 +1,40 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Banner from "../components/Career/Banner";
 import { Helmet } from "react-helmet-async";
 import { CareerPageData as metaTags } from "../data/Metatags";
 
-interface FormData {
+// FormDataTypes.ts
+
+export interface FormDataState {
   name: string;
   email: string;
   phone: string;
   profession: string;
-  pdf: File | null;
+  pdf: File | string;
   message: string;
 }
 
 const Carrers = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormDataState>({
     name: "",
     email: "",
     phone: "",
     profession: "",
-    pdf: null,
+    pdf: "",
     message: "",
   });
-  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [errors, setErrors] = useState<Partial<FormDataState>>({});
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
 
-    if (e.target instanceof HTMLInputElement && e.target.type === 'file') {
+    if (e.target instanceof HTMLInputElement && e.target.type === "file") {
       const files = e.target.files;
       setFormData({
         ...formData,
@@ -45,8 +50,9 @@ const Carrers = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newErrors: Partial<FormData> = {};
+    const newErrors: Partial<FormDataState> = {};
 
+    // Validate form fields
     if (!formData.name.trim()) {
       newErrors.name = "Name required";
     }
@@ -69,6 +75,8 @@ const Carrers = () => {
 
     if (!formData.pdf) {
       newErrors.pdf = "PDF file required";
+    } else if (!(formData.pdf instanceof File)) {
+      newErrors.pdf = "Invalid PDF file";
     }
 
     if (!formData.message.trim()) {
@@ -78,34 +86,36 @@ const Carrers = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      const formDataToSend = new FormData();
-      for (const key in formData) {
-        if (formData[key] instanceof File) {
-          formDataToSend.append(key, formData[key]);
-        } else {
-          formDataToSend.append(key, formData[key]);
-        }
-      }
+      const formSendData = new FormData();
+
+      formSendData.append("name", formData.name);
+      formSendData.append("email", formData.email);
+      formSendData.append("phone", formData.phone);
+      formSendData.append("message", formData.message);
+      formSendData.append("profession", formData.profession);
+      formSendData.append("pdf", formData.pdf);
 
       try {
         setSubmitting(true);
 
-        const response = await fetch(
+        const response = await axios.post(
           "http://localhost:5000/api/career-form",
+          formData,
           {
-            method: "POST",
-            body: formDataToSend,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
           }
         );
 
-        if (response.ok) {
+        if (response.status === 200) {
           setFormData({
             name: "",
             email: "",
             phone: "",
-            message: "",
             profession: "",
-            pdf: null,
+            pdf: "",
+            message: "",
           });
           alert("Form submitted successfully!");
         } else {
@@ -137,7 +147,7 @@ const Carrers = () => {
 
       <div className="flex justify-center items-center mt-10">
         <div className="bg-light_white shadow-md rounded-lg p-8 max-w-4xl w-full">
-          <form className="space-y-6" onSubmit={handleSubmit} encType="multipart/form-data">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <input
@@ -149,9 +159,7 @@ const Carrers = () => {
                   onChange={handleChange}
                   className="mt-1 block w-full rounded-lg p-3 border-zinc-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white focus:outline-none"
                 />
-                {errors.name && (
-                  <p className="text-error_clr">{errors.name}</p>
-                )}
+                {errors.name && <p className="text-error_clr">{errors.name}</p>}
               </div>
               <div>
                 <input
@@ -215,15 +223,12 @@ const Carrers = () => {
                 className="mt-1 block w-full rounded-lg p-3 border-zinc-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white focus:outline-none cursor-pointer"
               >
                 Upload File
-                <span
-                  id="file-name"
-                  className="ml-2 text-sm text-gray-500"
-                >{formData.pdf ? formData.pdf.name : "No file chosen"}</span>
+                <span id="file-name" className="ml-2 text-sm text-gray-500">
+                  {/* {formData.pdf ? formData.pdf.name : "No file chosen"} */}
+                </span>
               </label>
-              {errors.pdf && (
-                <p className="text-error_clr">{errors.pdf}</p>
-              )}
-            </div>  
+              {/* {errors.pdf && <p className="text-error_clr">{errors.pdf}</p>} */}
+            </div>
             <div>
               <textarea
                 id="message"
